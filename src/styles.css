@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-mist text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+}
+
+::selection {
+  @apply bg-accent-400 text-slate-950;
+}
+
+.glass {
+  @apply border border-white/50 bg-white/70 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/70;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+}
+
+.eyebrow {
+  @apply mb-3 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-100;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-brand-600 via-slate-900 to-accent-500 bg-clip-text text-transparent dark:from-brand-100 dark:via-white dark:to-accent-400;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-500;
+}
