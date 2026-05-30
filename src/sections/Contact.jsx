@@ -50,7 +50,7 @@ export function Contact() {
     <section id="contact" className="section-shell">
       <SectionHeader
         eyebrow="Contact"
-        title="Let’s build something thoughtful."
+        title="Let's build something thoughtful."
         description="Send a note for product engineering, backend systems, AI workflows, or collaboration opportunities."
       />
 
@@ -64,25 +64,29 @@ export function Contact() {
         >
           <h3 className="font-display text-2xl font-bold">Contact details</h3>
           <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-            I’m open to engineering roles, consulting, and focused collaborations where quality matters.
+            I'm open to engineering roles, consulting, and focused collaborations where quality matters.
           </p>
           <div className="mt-8 space-y-4">
-            {contactDetails.map(({ label, value, href, icon: Icon }) => (
-              <motion.a
-                key={label}
-                href={href}
-                className="focus-ring flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/65 p-4 transition hover:-translate-y-1 hover:border-brand-500 dark:border-white/10 dark:bg-white/5"
-                variants={fadeInUp}
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-500 text-white">
-                  <Icon size={20} />
-                </span>
-                <span>
-                  <span className="block text-sm font-bold text-slate-500 dark:text-slate-400">{label}</span>
-                  <span className="block break-all font-semibold">{value}</span>
-                </span>
-              </motion.a>
-            ))}
+            {contactDetails.map(({ label, value, href, icon: Icon }) => {
+              const MotionComponent = href ? motion.a : motion.div;
+
+              return (
+                <MotionComponent
+                  key={label}
+                  href={href || undefined}
+                  className="focus-ring flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/65 p-4 transition hover:-translate-y-1 hover:border-brand-500 dark:border-white/10 dark:bg-white/5"
+                  variants={fadeInUp}
+                >
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-500 text-white">
+                    <Icon size={20} />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-bold text-slate-500 dark:text-slate-400">{label}</span>
+                    <span className="block break-all font-semibold">{value}</span>
+                  </span>
+                </MotionComponent>
+              );
+            })}
           </div>
         </motion.div>
 

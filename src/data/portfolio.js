@@ -23,13 +23,13 @@ export const profile = {
 };
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const socials = [
@@ -202,5 +202,5 @@ export const contactDetails = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, icon: Mail },
   { label: 'LinkedIn', value: 'linkedin.com/in/hrishikesh', href: 'https://linkedin.com/', icon: Linkedin },
   { label: 'GitHub', value: 'github.com/hrishikesh', href: 'https://github.com/', icon: Github },
-  { label: 'Location', value: profile.location, href: '#contact', icon: MapPin },
+  { label: 'Location', value: profile.location, href: null, icon: MapPin },
 ];

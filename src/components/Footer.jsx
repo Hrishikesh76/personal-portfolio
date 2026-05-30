@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { BackToTop } from './BackToTop.jsx';
 import { navLinks, profile, socials } from '../data/portfolio.js';
 
@@ -11,19 +12,19 @@ export function Footer() {
             <span className="text-brand-600 dark:text-accent-400">.</span>
           </p>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+            Copyright {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-3">
-          {navLinks.slice(0, 5).map((link) => (
-            <a
+          {navLinks.map((link) => (
+            <Link
               className="focus-ring rounded-full px-2 py-1 text-sm font-semibold text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-accent-400"
-              href={link.href}
+              to={link.href}
               key={link.href}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 

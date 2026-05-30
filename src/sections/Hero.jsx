@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import profileImage from '../assets/profile-placeholder.svg';
 import { Button } from '../components/Button.jsx';
 import { TypingText } from '../components/TypingText.jsx';
@@ -30,7 +31,7 @@ export function Hero() {
           <Button href={profile.resumeUrl} download>
             <Download size={18} /> Download Resume
           </Button>
-          <Button href="#contact" variant="secondary">
+          <Button as={Link} to="/contact" variant="secondary">
             <Send size={18} /> Contact Me
           </Button>
         </motion.div>
